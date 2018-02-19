@@ -1,0 +1,33 @@
+
+
+
+<ul>
+    <% user.forEach(function(item){ %>
+        <li>
+            <a href="/profile/<%=item._id%>">
+                <h2>Titulo: <%=item.name%></h2>
+            </a>
+            <img width="100" src="<%=item.imagUrl%>" alt="<%=imagUrl.title%>">
+            <h3>Job Title: <%=item.jobTitle%></h3>
+            <h3>Company: <%=item.company%></h3>
+
+            
+            <%if(login){%>
+                <h3>Summary: <%=item.summary%></h3>
+
+                <%if(item._id==editUserId){%>
+                    <a href="profile/<%item._id%>/edit"</a>Edit Profile</a>
+                <%}%>
+                <%}%>
+          
+        </li>
+  
+     <%});%>
+
+
+
+</ul>
+
+
+
+
